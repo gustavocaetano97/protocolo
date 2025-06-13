@@ -253,7 +253,7 @@ function App() {
                 
                 <div className="mb-12">
                   <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                    src="/1.png"
                     alt="Homem confiante"
                     className="w-64 h-64 rounded-full mx-auto mb-8 object-cover shadow-2xl"
                   />
@@ -295,7 +295,7 @@ function App() {
                 </h3>
                 <div className="text-center mt-16">
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop"
+                    src="/2.png"
                     alt="Casal feliz"
                     className="w-full max-w-2xl mx-auto rounded-lg shadow-2xl mb-8"
                   />
@@ -326,7 +326,7 @@ function App() {
                 
                 <div className="mb-12">
                   <img 
-                    src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=400&fit=crop"
+                    src="/3.png"
                     alt="Transformação pessoal"
                     className="w-full max-w-2xl mx-auto rounded-lg shadow-2xl mb-8"
                   />
@@ -356,7 +356,7 @@ function App() {
                   <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-8">
                     <div className="flex-shrink-0">
                       <img 
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
+                        src="/4.png"
                         alt="Gustavo Andere"
                         className="w-48 h-48 rounded-full object-cover shadow-xl"
                       />
