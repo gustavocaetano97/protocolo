@@ -175,7 +175,7 @@ function App() {
             <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400">
               <iframe 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/your-video-id"
+                src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb"
                 title="Protocolo Secreto do Prazer"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
