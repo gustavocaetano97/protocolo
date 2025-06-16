@@ -173,18 +173,7 @@ function App() {
           
           <div className="max-w-4xl mx-auto mb-12">
             <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400">
-              <div style={{position:'relative',paddingTop:'56.25%'}}>
-                <iframe 
-                  id="panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb" 
-                  src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb&iosFakeFullscreen=true" 
-                  style={{border:'none',position:'absolute',top:0,left:0}} 
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
-                  allowFullScreen={true} 
-                  width="100%" 
-                  height="100%" 
-                  fetchPriority="high"
-                />
-              </div>
+              <div style="position:relative;padding-top:56.25%;"><iframe id="panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb" src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb&iosFakeFullscreen=true" style="border:none;position:absolute;top:0;left:0;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="100%" height="100%" fetchpriority="high"></iframe><script>if(!document.querySelector('script[src="https://player.pandavideo.com.br/api.v2.js"]')){let s=document.createElement('script');s.src='https://player.pandavideo.com.br/api.v2.js'; s.async=true; document.head.appendChild(s);} window.pandascripttag = window.pandascripttag || [];window.pandascripttag.push(function (){const panda_id_player = 'panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb';const p=new PandaPlayer(panda_id_player,{onReady(){p.loadWindowScreen({panda_id_player});}});})</script></div>
             </div>
           </div>
           
