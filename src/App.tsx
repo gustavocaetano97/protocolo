@@ -157,31 +157,57 @@ function App() {
 
   const purchaseUrl = "https://protocolo-volat.pay.yampi.com.br/r/666ZR2LFCU";
 
-  return (
-    <div className="min-h-screen bg-white text-black font-rounded">
-      {/* Hero Section - Black Background */}
-      <div className="bg-black text-white">
-        <div className="container mx-auto px-6 py-20 text-center">
-          <div className="max-w-4xl mx-auto mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-              ESSE VÍDEO PODE DESAPARECER A QUALQUER MOMENTO
-            </h1>
-            <p className="text-xl md:text-2xl font-medium mb-12 leading-relaxed text-gray-300">
-              Assista enquanto ainda tem tempo
-            </p>
+ return (
+  <div className="min-h-screen bg-white text-black font-rounded">
+    {/* Hero Section - Black Background */}
+    <div className="bg-black text-white">
+      <div className="container mx-auto px-6 py-20 text-center">
+        <div className="max-w-4xl mx-auto mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            ESSE VÍDEO PODE DESAPARECER A QUALQUER MOMENTO
+          </h1>
+          <p className="text-xl md:text-2xl font-medium mb-12 leading-relaxed text-gray-300">
+            Assista enquanto ainda tem tempo
+          </p>
+        </div>
+
+        {/* Video Section */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400 relative">
+            <iframe
+              id="panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb"
+              src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb&iosFakeFullscreen=true"
+              style={{ border: "none", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+              fetchpriority="high"
+            ></iframe>
+            <script
+              src="https://player.pandavideo.com.br/api.v2.js"
+              async
+            ></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.pandascripttag = window.pandascripttag || [];
+                  window.pandascripttag.push(function () {
+                    const panda_id_player = 'panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb';
+                    const p = new PandaPlayer(panda_id_player, {
+                      onReady() {
+                        p.loadWindowScreen({ panda_id_player });
+                      },
+                    });
+                  });
+                `,
+              }}
+            ></script>
           </div>
-          
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400">
-              <iframe 
-                className="w-full h-full"
-                src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb"
-                title="Protocolo Secreto do Prazer"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
           
           {/* Purchase Button - Shows when timer ends */}
           {showContent && (
