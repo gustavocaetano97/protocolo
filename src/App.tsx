@@ -173,18 +173,13 @@ function App() {
           
           <div className="max-w-4xl mx-auto mb-12">
             <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400">
-              <div style={{position:'relative',paddingTop:'56.25%'}}>
-                <iframe 
-                  id="panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb" 
-                  src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb&iosFakeFullscreen=true" 
-                  style={{border:'none',position:'absolute',top:0,left:0}} 
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
-                  allowFullScreen={true} 
-                  width="100%" 
-                  height="100%" 
-                  fetchPriority="high"
-                />
-              </div>
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/your-video-id"
+                title="Protocolo Secreto do Prazer"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
           
