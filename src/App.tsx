@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, CheckCircle, Star, Shield, Zap, BookOpen, Smartphone, Package, User, MessageCircle, Calendar, CreditCard, Target, Heart, TrendingUp, Award, Users, ThumbsUp } from 'lucide-react';
-import { useEffect } from "react";
 
 const VideoSection = () => {
   useEffect(() => {
@@ -9,8 +8,43 @@ const VideoSection = () => {
     script.src = "https://player.pandavideo.com.br/api.v2.js";
     script.async = true;
     document.body.appendChild(script);
- 
-function App() {
+
+    script.onload = () => {
+      if (window.pandascripttag) {
+        window.pandascripttag.push(function () {
+          const panda_id_player = "panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb";
+          const p = new PandaPlayer(panda_id_player, {
+            onReady() {
+              p.loadWindowScreen({ panda_id_player });
+            },
+          });
+        });
+      }
+    };
+
+    // Remove o script ao desmontar o componente
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div className="max-w-4xl mx-auto mb-12">
+      <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400 relative">
+        <iframe
+          id="panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb"
+          src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb&iosFakeFullscreen=true"
+          style={{ border: "none", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+          fetchpriority="high"
+        ></iframe>
+      </div>
+    </div>
+  );
+};
+
+const App = () => {
   const [showContent, setShowContent] = useState(false);
   const [timeRemaining, setTimeRemaining] = useState(160); // 2 minutes 40 seconds
   const delaySeconds = 160;
@@ -166,43 +200,6 @@ function App() {
 
   const purchaseUrl = "https://protocolo-volat.pay.yampi.com.br/r/666ZR2LFCU";
 
-
-    script.onload = () => {
-      if (window.pandascripttag) {
-        window.pandascripttag.push(function () {
-          const panda_id_player = "panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb";
-          const p = new PandaPlayer(panda_id_player, {
-            onReady() {
-              p.loadWindowScreen({ panda_id_player });
-            },
-          });
-        });
-      }
-    };
-
-    // Remove o script ao desmontar o componente
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  return (
-    <div className="max-w-4xl mx-auto mb-12">
-      <div className="aspect-video bg-gray-900 rounded-lg shadow-2xl overflow-hidden border-4 border-yellow-400 relative">
-        <iframe
-          id="panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb"
-          src="https://player-vz-5ab06143-302.tv.pandavideo.com.br/embed/?v=d0150b8d-0f36-4e07-8d93-e6f04c310beb&iosFakeFullscreen=true"
-          style={{ border: "none", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen
-          fetchpriority="high"
-        ></iframe>
-      </div>
-    </div>
-  );
-};
-
-const App = () => {
   return (
     <div className="min-h-screen bg-white text-black font-rounded">
       <div className="bg-black text-white">
@@ -216,13 +213,6 @@ const App = () => {
             </p>
           </div>
           <VideoSection />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default App;
           
           {/* Purchase Button - Shows when timer ends */}
           {showContent && (
@@ -319,10 +309,11 @@ export default App;
               </div>
             </div>
           </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <Shield className="w-8 h-8 text-green-400" />
-                  <span className="text-lg">Compra Segura pelo Mercado Pago</span>
-                </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Shield className="w-8 h-8 text-green-400" />
+            <span className="text-lg">Compra Segura pelo Mercado Pago</span>
+          </div>
           
           {/* What You'll Learn Section */}
           <div className="bg-gray-50 py-20">
@@ -482,10 +473,12 @@ export default App;
               </div>
             </div>
           </div>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                  <Shield className="w-8 h-8 text-green-400" />
-                  <span className="text-lg">Compra Segura pelo Mercado Pago</span>
-                </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Shield className="w-8 h-8 text-green-400" />
+            <span className="text-lg">Compra Segura pelo Mercado Pago</span>
+          </div>
+          
           {/* FAQ Section */}
           <div className="bg-gray-50 py-20">
             <div className="container mx-auto px-6">
@@ -541,6 +534,6 @@ export default App;
       )}
     </div>
   );
-}
+};
 
 export default App;
