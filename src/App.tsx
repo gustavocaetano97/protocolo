@@ -22,6 +22,28 @@ function App() {
       });
     }, 1000);
 
+    // Load Panda Video script
+    const loadPandaScript = () => {
+      if (!document.querySelector('script[src="https://player.pandavideo.com.br/api.v2.js"]')) {
+        const script = document.createElement('script');
+        script.src = 'https://player.pandavideo.com.br/api.v2.js';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+      
+      window.pandascripttag = window.pandascripttag || [];
+      window.pandascripttag.push(function () {
+        const panda_id_player = 'panda-d0150b8d-0f36-4e07-8d93-e6f04c310beb';
+        const p = new window.PandaPlayer(panda_id_player, {
+          onReady() {
+            p.loadWindowScreen({ panda_id_player });
+          }
+        });
+      });
+    };
+
+    loadPandaScript();
+
     return () => {
       clearTimeout(timer);
       clearInterval(countdownInterval);
